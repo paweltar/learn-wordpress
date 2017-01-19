@@ -14,8 +14,23 @@
    ?>
 
   <body <?php body_class( $awesome_classes ); ?>>
-
-    <?php wp_nav_menu(array('theme_location' => 'primary' )); ?>
-    <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-    <hr>
-    <br>
+    <div class="row align-center">
+      <div class="column">
+        <div class="top-bar">
+          <div class="top-bar-title">Awesome Theme</div>
+          <div>
+          <div class="top-bar-right">
+            <?php wp_nav_menu(array('theme_location' => 'primary' )); ?>
+          </div>
+          </div>
+        </div>
+        <img class="header__image" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
+        <hr>
+        <br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-3 column">
+        <?php get_sidebar(); ?>
+      </div>
+      <div class="small-9 column">

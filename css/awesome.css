@@ -1,11 +1,14 @@
-html,
-body {
-  margin: 0;
-  color: #333;
-  background: #eee;
-  font: 1rem Arial, sans-serif;
+.card {
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  border: none;
 }
 
-body {
-  padding: 20px;
+.card img {
+  min-width: 100%;
+}
+
+.widgets-area {
+  padding: 15px;
 }
