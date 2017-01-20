@@ -32,7 +32,7 @@
       <div class="column">
         <h4 class=" text-center subheader animated fadeIn">Most recent posts:</h4>
         <hr>
-        <div class="row data-equalizer">
+        <div class="row data-equalizer slider-container">
           <?php
 
             $args_cat = array(
@@ -44,7 +44,7 @@
             foreach($categories as $category) {
               $args = array(
                 'type' =>'post',
-                'posts_per_page' => 1,
+                'posts_per_page' => 3,
                 'category__in' => $category->term_id,
                 'category__not_in' => array(1)
               );
