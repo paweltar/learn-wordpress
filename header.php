@@ -26,11 +26,26 @@
         </div>
         <img class="header__image" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
         <hr>
-        <br>
       </div>
     </div>
     <div class="row">
-      <div class="small-3 column">
-        <?php get_sidebar(); ?>
+      <div class="column">
+        <h2 class=" text-center subheader">Most recents post:</h2>
+        <hr>
+        <?php
+          $lastBlog = new WP_Query('type=post&posts_per_page=1');
+
+          if ( $lastBlog->have_posts() ) :
+              while ( $lastBlog->have_posts() ) : $lastBlog->the_post(); ?>
+
+                <?php get_template_part('content', get_post_format()); ?>
+
+              <?php endwhile;
+            endif;
+
+          wp_reset_postdata();
+         ?>
+         <hr>
       </div>
-      <div class="small-9 column">
+    </div>
+    

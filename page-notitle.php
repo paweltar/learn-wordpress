@@ -3,7 +3,11 @@
 // Template Name: Page No Title
 
 get_header(); ?>
-
+<div class="row">
+  <div class="small-3 column">
+    <?php get_sidebar(); ?>
+  </div>
+  <div class="small-9 column">
 <?php if ( have_posts() ) :
     while ( have_posts() ) : the_post(); ?>
       <h1>This is my static title</h1>
@@ -13,5 +17,7 @@ get_header(); ?>
     <?php endwhile;
   endif;
 ?>
+</div>
+</div>
 
 <?php get_footer(); ?>
