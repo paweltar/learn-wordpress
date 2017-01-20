@@ -1,5 +1,5 @@
 <div class="small-12 medium-4 column data-equalizer-watch">
-  <div class="card featured-card">
+  <div class="card featured-card animated fadeIn">
     <div class="card-divider">
       <p>
         <?php the_title(); ?>

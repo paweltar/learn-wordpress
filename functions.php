@@ -8,6 +8,7 @@
 function awesome_script_enqueue() {
   // css
   wp_enqueue_style('foundation', get_template_directory_uri() . '/css/foundation.min.css', array(), '6.3.0', 'all');
+  wp_enqueue_style('animatecss', get_template_directory_uri() . '/css/animate.css', array(), '3.5.1', 'all');
   wp_enqueue_style('customstyle', get_template_directory_uri() . '/css/awesome.css', array(), '1.0.0', 'all');
   // js
   wp_enqueue_script('jquery');

@@ -30,7 +30,7 @@
     </div>
     <div class="row">
       <div class="column">
-        <h4 class=" text-center subheader">Most recent posts:</h4>
+        <h4 class=" text-center subheader animated fadeIn">Most recent posts:</h4>
         <hr>
         <div class="row data-equalizer">
           <?php
