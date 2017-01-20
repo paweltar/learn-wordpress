@@ -30,22 +30,38 @@
     </div>
     <div class="row">
       <div class="column">
-        <h2 class=" text-center subheader">Most recents post:</h2>
+        <h4 class=" text-center subheader">Most recent posts:</h4>
         <hr>
-        <?php
-          $lastBlog = new WP_Query('type=post&posts_per_page=1');
+        <div class="row data-equalizer">
+          <?php
 
-          if ( $lastBlog->have_posts() ) :
-              while ( $lastBlog->have_posts() ) : $lastBlog->the_post(); ?>
+            $args_cat = array(
+              'include' => '8, 9, 10'
+            );
 
-                <?php get_template_part('content', get_post_format()); ?>
+            $categories = get_categories($args_cat);
 
-              <?php endwhile;
-            endif;
+            foreach($categories as $category) {
+              $args = array(
+                'type' =>'post',
+                'posts_per_page' => 1,
+                'category__in' => $category->term_id,
+                'category__not_in' => array(1)
+              );
+              $lastBlog = new WP_Query($args);
 
-          wp_reset_postdata();
-         ?>
+              if ( $lastBlog->have_posts() ) :
+                  while ( $lastBlog->have_posts() ) : $lastBlog->the_post(); ?>
+
+                    <?php get_template_part('content', 'featured'); ?>
+
+                  <?php endwhile;
+                endif;
+
+              wp_reset_postdata();
+            }
+           ?>
+        </div>
          <hr>
       </div>
     </div>
-    

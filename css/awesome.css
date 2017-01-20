@@ -5,10 +5,40 @@
   border: none;
 }
 
+.header__image {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
 .card img {
   min-width: 100%;
 }
 
 .widgets-area {
   padding: 15px;
+}
+
+.top-bar, .top-bar ul {
+  background: transparent;
+}
+
+.top-bar a {
+  background: transparent;
+  color: black;
+}
+
+.top-bar li {
+  transition: all 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+.top-bar li:hover {
+  border-bottom: 2px solid black;
+}
+
+.featured-card {
+  height: 100%;
+}
+
+.featured-card img {
+  max-width: none;
 }
