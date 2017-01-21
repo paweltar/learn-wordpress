@@ -28,40 +28,4 @@
         <hr>
       </div>
     </div>
-    <div class="row">
-      <div class="column">
-        <h4 class=" text-center subheader animated fadeIn">Most recent posts:</h4>
-        <hr>
-        <div class="row data-equalizer slider-container">
-          <?php
-
-            $args_cat = array(
-              'include' => '8, 9, 10'
-            );
-
-            $categories = get_categories($args_cat);
-
-            foreach($categories as $category) {
-              $args = array(
-                'type' =>'post',
-                'posts_per_page' => 3,
-                'category__in' => $category->term_id,
-                'category__not_in' => array(1)
-              );
-              $lastBlog = new WP_Query($args);
-
-              if ( $lastBlog->have_posts() ) :
-                  while ( $lastBlog->have_posts() ) : $lastBlog->the_post(); ?>
-
-                    <?php get_template_part('content', 'featured'); ?>
-
-                  <?php endwhile;
-                endif;
-
-              wp_reset_postdata();
-            }
-           ?>
-        </div>
-         <hr>
-      </div>
-    </div>
+    
