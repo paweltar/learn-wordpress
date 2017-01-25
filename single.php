@@ -17,17 +17,28 @@
 
         <?php the_content(); ?>
         <hr>
-      <?php if ( comments_open() ){
-        comments_template();
-      } else {
-        echo '<h5 class="text-center">Sorry, comments are closed!</h5>';
-      }
-      ?>
       </article>
 
     <?php endwhile;
-    endif;
-?>
+    endif; ?>
+
+    <div class="row">
+      <div class="column small-6 text-left">
+        <?php  previous_post_link(); ?>
+      </div>
+      <div class="column small-6 text-right">
+        <?php next_post_link(); ?>
+      </div>
+    </div>
+    
+    <hr>
+
+    <?php if ( comments_open() ){
+      comments_template();
+    } else {
+      echo '<h5 class="text-center">Sorry, comments are closed!</h5>';
+    }
+    ?>
 </div>
 </div>
 

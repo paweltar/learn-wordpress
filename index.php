@@ -5,8 +5,12 @@
     <?php get_sidebar(); ?>
   </div>
   <div class="small-9 column">
-    <div class="row text-center">
-      <?php if ( have_posts() ): $i = 0;
+    <div class="row text-center small-collapse">
+      <?php
+      $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
+      $args = array('posts_per_page' => 3, 'paged' => $currentPage);
+      query_posts($args);
+      if ( have_posts() ): $i = 0;
           while ( have_posts() ) : the_post(); ?>
 
           <?php if($i == 0): $column = 12;
@@ -28,7 +32,19 @@
 
           <?php $i++ ?>
         <?php endwhile; ?>
-      <?php endif; ?>
+        <br>
+        <hr>
+
+        <div class="column small-12">
+          <ul class="pagination text-center" role="navigation" aria-label="Pagination">
+            <li class="pagination-previous"><?php next_posts_link('Older Posts'); ?></li>
+            <li class="pagination-next"><?php previous_posts_link('Newer Posts'); ?></li>
+          </ul>
+        </div>
+
+      <?php endif;
+        wp_reset_query();
+       ?>
     </div>
 </div>
 </div>

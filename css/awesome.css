@@ -83,7 +83,3 @@
 .second-row-padding:nth-child(3) {
   padding-left: 0;
 }
-
-.third-row-padding { padding: 0; }
-.third-row-padding:nth-child(4) { padding-left: 15px; }
-.third-row-padding:nth-child(6) { padding-right: 15px; }
