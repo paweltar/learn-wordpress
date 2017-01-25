@@ -1,8 +1,10 @@
 // javascript functions
-jQuery(document).foundation();
+var j = jQuery.noConflict();
+j(document).foundation();
 
-jQuery(document).ready(function() {
-  jQuery('.slider-container').slick({
+j(document).ready(function() {
+
+  j('.slider-container').slick({
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -13,5 +15,11 @@ jQuery(document).ready(function() {
     dots: true,
     appendDots: '.slider-container',
     appendArrows : '.slider-container'
+  });
+
+  j(document).on('click', '.open-search > a', function(e) {
+    e.preventDefault();
+
+    j('.search-form-container').slideToggle(300);
   });
 });

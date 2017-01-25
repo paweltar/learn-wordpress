@@ -83,3 +83,7 @@
 .second-row-padding:nth-child(3) {
   padding-left: 0;
 }
+
+.search-form-container {
+  display: none;
+}

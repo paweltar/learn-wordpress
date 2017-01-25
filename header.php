@@ -25,8 +25,8 @@
           </div>
         </div>
         <img class="header__image" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
-        <hr>
           <div class="search-form-container">
+            <hr>
             <?php get_search_form(); ?>
           </div>
         <hr>
