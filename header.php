@@ -20,7 +20,13 @@
           <div class="top-bar-title">Awesome Theme</div>
           <div>
           <div class="top-bar-right">
-            <?php wp_nav_menu(array('theme_location' => 'primary' )); ?>
+            <?php wp_nav_menu(array(
+              'container' => false,
+              'menu_class' => 'dropdown menu',
+              'theme_location' => 'primary',
+              'items_wrap' => '<ul id="%1$s" class="%2$s" data-dropdown-menu>%3$s</ul>',
+              'walker' => new Walker_Nav_Primary()
+            )); ?>
           </div>
           </div>
         </div>

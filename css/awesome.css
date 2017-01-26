@@ -87,3 +87,13 @@
 .search-form-container {
   display: none;
 }
+
+.is-dropdown-submenu-item {
+  background: rgba(242, 242, 242, 0.86);
+  border: none;
+  text-align: center;
+}
+
+.dropdown.menu>li.is-dropdown-submenu-parent>a:after {
+  border-color: #000000 transparent transparent;
+}
