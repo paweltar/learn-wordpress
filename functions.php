@@ -84,3 +84,15 @@ add_image_size( 'search-thumb', 9999, 50 );
 */
 
 require get_template_directory() . '/inc/walker.php';
+
+/*
+  ===============================
+  Header Function
+  ===============================
+*/
+
+function awesome_remove_version() {
+  return '';
+}
+
+add_filter('the_generator', 'awesome_remove_version');
